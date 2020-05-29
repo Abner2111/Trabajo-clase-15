@@ -4,7 +4,7 @@
 * 3. Cada	dos	nodos	insertar	un	nodo	con	el	resultado	de la	suma	de	estos	dos	nodos	anteriores.
 * 4. Devolver	el	nodo	con	mayor	valor	y	el	nodo	con	menor	valor	de	una	lista.
  */
-package LinkedListAndOperations;
+package LikedListAndOperations;
 
 /**
  *
@@ -27,6 +27,13 @@ public class LinkedList {
         return this.size;
     }
     
+    public void insertFirst(float data){
+        Node newNode = new Node(data);
+        newNode.setNext(this.head);
+        this.head = newNode;
+        this.size++;
+        
+    }
     public float average(){
         Node current = this.head;
         float average = 0;
@@ -84,4 +91,57 @@ public class LinkedList {
         return result;
         
     }
+    
+    public void displayList(){
+        Node curr = this.head;
+        while(curr!=null){
+            System.out.println(curr.getData());
+            curr = curr.getNext();
+        }
+    }
+     public void InsertEverTwo(float sum){
+        Node Aux = new Node(0);
+        Aux.setNext(this.head);
+        this.head = Aux;
+        this.size++;
+        Node New = new Node(sum);
+        New.setNext(this.head);
+        this.head = New;
+        this.size++;
+    }
+    
+    public float Sum(){
+        Node current = this.head;
+        float sum = 0;
+        
+        while (current!=null){
+            sum += current.getData();
+            
+            current = current.getNext();
+        }
+        return sum;
+    }
+    
+    public Node[] mayorMenor(){
+        Node curr = this.head;
+        Node menor = this.head;
+        Node mayor = this.head;
+        Node[] result= new Node[2];
+        
+        while (curr!=null){
+            if (curr.getData()<menor.getData()){
+                menor = curr;
+            } else if (curr.getData() > mayor.getData()){
+                mayor = curr;
+            } 
+            
+            curr = curr.getNext();
+            
+        }
+        result[0] = mayor;
+        result[1] = menor;
+        return result;
+        
+    }
+                
 }
