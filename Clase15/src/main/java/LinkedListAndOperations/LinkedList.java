@@ -25,4 +25,15 @@ public class LinkedList {
     public int size(){
         return this.size;
     }
+    
+    public float average(){
+        Node current = this.head;
+        float average = 0;
+        
+        while (current!=null){
+            average+=current.getData();
+        }
+        
+        
+    }
 }

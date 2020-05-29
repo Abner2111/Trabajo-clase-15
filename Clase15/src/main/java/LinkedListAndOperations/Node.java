@@ -10,18 +10,20 @@ package LinkedListAndOperations;
  * @author abner
  */
 public class Node {
-    private Object data;
+    private float data;
     private Node next;
     
-    public Node(Object data){
+    public Node(float data){
         this.next = null;
         this.data = data;
     }
     
-    public void setData(Object data) {
+    public void setData(float data) {
         this.data = data;
     }
-    
+    public Object getData(){
+        return this.data;
+    }
     public Node getNext() {
         return next.next;
     }
