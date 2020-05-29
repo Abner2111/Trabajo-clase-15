@@ -21,7 +21,7 @@ public class Node {
     public void setData(float data) {
         this.data = data;
     }
-    public Object getData(){
+    public float getData(){
         return this.data;
     }
     public Node getNext() {
